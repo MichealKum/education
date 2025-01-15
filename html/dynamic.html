@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Динамический HTML</title>
+    <script language='JavaScript' src='jquery/jquery-3.6.4.min.js'></script>
+    <style>
+        #indicator {
+            font-size: 4em;
+            border: 2px solid brown;
+            background-color: #efe;
+        }
+    </style>
+</head>
+<body>
+<div id="indicator">
+    Этот элемент будет подвержен изменениям.
+</div>
+<div>
+    <h1>Изменение заднего фона:</h1>
+    <button id="bg_green">Зеленый</button>
+    <button id="bg_red">Красный</button>
+    <button id="bg_blue">Синий</button>
+    <button id="bg_reset">Удалить</button>
+</div>
+<script language="JavaScript">
+    function init() {
+        $("#bg_green").on("click", () => {
+            $("#indicator").css("background-color", "green");
+        });
+        $("#bg_reset").on("click", () => {
+            $("#indicator").css("background-color", "");
+        });
+    }
+
+    $(document).ready(init);
+</script>
+</body>
+</html>
